@@ -1,7 +1,7 @@
 #!/bin/bash
 
 cd ~
-git clone https://github.com/kubernetes-sigs/kubespray.git
+git clone https://github.com/HackCTF/kubespray
 cd kubespray
 python -m pip install -r requirements.txt
-ansible-playbook -i /inventory/inventory.ini cluster.yml -vvvv
+ansible-playbook -i /inventory/sample/inventory.ini cluster.yml -vvvv
