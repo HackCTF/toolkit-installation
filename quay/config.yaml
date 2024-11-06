@@ -3,7 +3,7 @@ DATABASE_SECRET_KEY: gdu78fdfepwoat97862
 AUTHENTICATION_TYPE: Database
 AVATAR_KIND: local
 BUILDLOGS_REDIS:
-    host: redis
+    host: {{ip_host}}
     port: 6379
 DB_CONNECTION_ARGS: {}
 DB_URI: postgresql://quay:password@postgres/quay
@@ -79,6 +79,6 @@ TAG_EXPIRATION_OPTIONS:
     - 4w
 TEAM_RESYNC_STALE_TIME: 30m
 USER_EVENTS_REDIS:
-    host: redis
+    host: {{ip_host}}
     port: 6379
 USER_RECOVERY_TOKEN_LIFETIME: 30m
