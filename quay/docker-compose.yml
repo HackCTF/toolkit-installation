@@ -30,11 +30,11 @@ services:
     image: quay.io/projectquay/quay:latest
     environment:
       DATABASE_TYPE: postgres
-      DATABASE_URL: postgres://quay:password@postgres:5432/quay
+      DATABASE_URL: postgres://quay:password@{{ip_host}}:5432/quay
       LOG_LEVEL: debug
       HTTP_ADDR: 0.0.0.0:8080
       SERVER_HOSTNAME: "localhost"
-      BUILDLOGS_REDIS: "redis://redis:6379/0"
+      BUILDLOGS_REDIS: "redis://{{ip_host}}:6379/0"
     ports:
       - "8080:8080"
     depends_on:
