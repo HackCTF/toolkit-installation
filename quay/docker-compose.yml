@@ -43,9 +43,16 @@ services:
     networks:
       - quay-net
     volumes:
-    # - quay-config:/quay/config
       - ./config.yaml:/quay-registry/conf/stack/config.yaml  # Montar el archivo de configuración
-      - ./storage:/datastorage:Z  # Montar el almacenamiento de Quay
+      - ./storage:/datastorage:rw,Z  # Montar el almacenamiento de Quay
+    user: 1000:1000
+    cap_drop:
+      - ALL
+    cap_add:
+      - CHOWN
+      - FOWNER
+    security_opt:
+      - no-new-privileges:true
 
 networks:
   quay-net:
