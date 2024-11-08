@@ -25,7 +25,16 @@ Username: myusername
 Password: mypassword
 ```
 with robot access local not https
+edit the file
 
+```sh
+nano /etc/containers/registries.conf
+# Configuración del registro inseguro (en formato v2)
+[[registry]]
+location = "192.168.1.70:8080"
+insecure = true
+```
+and execute
 ```sh
 podman login --tls-verify=false -u="neomatrix+robot" -p="E0J28S1DFEMUVYG04JWT3WVL8PCMGAWSQPIO7OKZKFY0YUFFDTBW8FVCYOTCOQE6" localhost:8080
 Login Succeeded!
